@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <h1>
+            <%= title %>
+        </h1>
+
+        <a href="localhost:8080/new"> New post endpoint</a>
+        <form method="POST" action="/new">
+            <input type="text" placeholder="user" name="messageUser" value="bob">
+            <input type="text" placeholder="message" name="messageText" value="testing">
+            <button>Post Message</button>
+        </form>
+
+        <ul>
+            <% messages.map((m)=>{ %>
+                <li> 
+                    <%= m.id %>
+                    <%= m.user %> 
+                    <%= m.text %> 
+                    <%= m.added %> 
+                    <a href="localhost:8080/<%=m.id%>">Open message</a>
+                </li>
+            <% }) %>
+        </ul>
+
+        
+    </body>
+</html>
