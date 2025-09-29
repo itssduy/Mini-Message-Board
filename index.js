@@ -28,13 +28,12 @@ const messages = [
 
 
 app.get('/', (req,res)=>{
-    res.render('index', {title: "Mini Message Board", messages: messages})
+    res.render('index', {title: "Mini Message Board",  host: req.host, messages: messages})
 })
 
 app.get('/:id', (req, res)=>{
-    console.log(req.params.id)
     const message = messages.find((x)=>x.id == req.params.id);
-    res.render('view', {message: message});
+    res.render('view', { message: message});
 })
 
 app.post('/new', (req,res)=>{
