@@ -4,7 +4,7 @@
             <%= title %>
         </h1>
 
-        <a href="<%= host %>/new"> New post endpoint</a>
+        <a href="/new"> New post endpoint</a>
         <form method="POST" action="/new">
             <input type="text" placeholder="user" name="messageUser" value="bob">
             <input type="text" placeholder="message" name="messageText" value="testing">
@@ -18,7 +18,7 @@
                     <%= m.user %> 
                     <%= m.text %> 
                     <%= m.added %> 
-                    <a href="<%= host %>/<%=m.id%>">Open message</a>
+                    <a href="/<%=m.id%>">Open message</a>
                 </li>
             <% }) %>
         </ul>
